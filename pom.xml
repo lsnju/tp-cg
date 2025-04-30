@@ -13,7 +13,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lsnju</groupId>
     <artifactId>tp-cg</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <packaging>jar</packaging>
     <name>tp-cg</name>
@@ -257,7 +257,7 @@
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.6.0</version>
+                <version>0.7.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>ossrh</publishingServerId>
