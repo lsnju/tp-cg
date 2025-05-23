@@ -6,6 +6,8 @@ tp code generator
 
 JDK17+
 
+## current version <version>1.0.1</version>
+
 ## maven import
 
 ```xml
@@ -13,7 +15,7 @@ JDK17+
 <dependency>
     <groupId>com.lsnju</groupId>
     <artifactId>tp-cg</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <scope>test</scope>
 </dependency>
 ```
