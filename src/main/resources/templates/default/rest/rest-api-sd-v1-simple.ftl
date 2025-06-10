@@ -44,17 +44,17 @@ public interface ${tableMo.restMo.apiName} {
     @Operation(summary = "查询")
     @GetMapping("/{id}")
     BaseResp<${tableMo.restMo.modelName}> query(@Parameter(description = "ID", required = true, example = "111")
-                                              @PathVariable(name = "id") long id);
+                                              @PathVariable(name = "id") ${tableMo.idColumn.propType.type} id);
 
     @Operation(summary = "更新")
     @PutMapping("/{id}")
     BaseResp<Void> update(@Parameter(description = "ID", required = true, example = "111")
-                          @PathVariable(name = "id") long id,
+                          @PathVariable(name = "id") ${tableMo.idColumn.propType.type} id,
                           @Valid @RequestBody ${tableMo.restMo.addReqName} req);
 
     @Operation(summary = "删除")
     @DeleteMapping("/{id}")
     BaseResp<Void> delete(@Parameter(description = "ID", required = true, example = "111")
-                          @PathVariable(name = "id") long id);
+                          @PathVariable(name = "id") ${tableMo.idColumn.propType.type} id);
 
 }

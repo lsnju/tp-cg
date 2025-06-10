@@ -60,7 +60,7 @@ public class ${tableMo.restMo.implName} implements ${tableMo.restMo.apiName} {
     }
 
     @Override
-    public ResponseEntity<BaseResp<${tableMo.restMo.modelName}>> query(long id) {
+    public ResponseEntity<BaseResp<${tableMo.restMo.modelName}>> query(${tableMo.idColumn.propType.type} id) {
         log.info("{}", id);
         final ${tableMo.repoMo.modelName} item = repo.getById(id);
         if (item == null) {
@@ -70,7 +70,7 @@ public class ${tableMo.restMo.implName} implements ${tableMo.restMo.apiName} {
     }
 
     @Override
-    public ResponseEntity<BaseResp<Void>> update(long id, @Valid ${tableMo.restMo.addReqName} request) {
+    public ResponseEntity<BaseResp<Void>> update(${tableMo.idColumn.propType.type} id, @Valid ${tableMo.restMo.addReqName} request) {
         log.info("{}, request={}", id, request);
         final ${tableMo.repoMo.modelName} item = repo.getById(id);
         if (item == null) {
@@ -80,7 +80,7 @@ public class ${tableMo.restMo.implName} implements ${tableMo.restMo.apiName} {
     }
 
     @Override
-    public ResponseEntity<BaseResp<Void>> delete(long id) {
+    public ResponseEntity<BaseResp<Void>> delete(${tableMo.idColumn.propType.type} id) {
         log.info("{}", id);
         final ${tableMo.repoMo.modelName} item = repo.getById(id);
         if (item == null) {
