@@ -22,6 +22,8 @@ public interface ${tableMo.repoMo.apiName} {
 
     ${tableMo.repoMo.modelName} lockById(${tableMo.idColumn.propType.type} id);
 
+    ${tableMo.repoMo.modelName} lockByIdWait(${tableMo.idColumn.propType.type} id);
+
     boolean update(${tableMo.repoMo.modelName} item);
 
     boolean delete(${tableMo.idColumn.propType.type} id);
