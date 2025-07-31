@@ -22,6 +22,8 @@ public interface ${tableMo.daoMo.apiName} {
 
     ${tableMo.daoMo.modelName} lockById(${tableMo.idColumn.propType.type} id);
 
+    ${tableMo.daoMo.modelName} lockByIdWait(${tableMo.idColumn.propType.type} id);
+
     int update(${tableMo.daoMo.modelName} a${tableMo.daoMo.modelName});
 
     int delete(${tableMo.idColumn.propType.type} id);

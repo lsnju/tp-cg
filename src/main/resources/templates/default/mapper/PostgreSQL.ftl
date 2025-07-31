@@ -74,6 +74,14 @@
         for update nowait
     </select>
 
+    <select id="lockByIdWait" resultMap="RM">
+        select
+        <include refid="allColumns" />
+        from ${tableMo.tableName}
+        where ${tableMo.idColumn.columnName} = ${r"#{"}${tableMo.idColumn.propName}${r"}"}
+        for update
+    </select>
+
     <update id="update" parameterType="${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName}">
         UPDATE ${tableMo.tableName}
         <trim prefix="SET" suffixOverrides=",">
