@@ -65,6 +65,12 @@ public class ${tableMo.repoMo.implName} implements ${tableMo.repoMo.apiName} {
     }
 
     @Override
+    public ${tableMo.repoMo.modelName} lockByIdNoWait(${tableMo.idColumn.propType.type} id) {
+        log.info("id={}", id);
+        return Converter.convert(this.dao.lockByIdNoWait(id));
+    }
+
+    @Override
     public boolean update(${tableMo.repoMo.modelName} item) {
         log.info("{}", item);
         Objects.requireNonNull(item);

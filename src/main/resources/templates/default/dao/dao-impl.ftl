@@ -68,6 +68,11 @@ public class ${tableMo.daoMo.implName} implements ${tableMo.daoMo.apiName} {
     }
 
     @Override
+    public ${tableMo.daoMo.modelName} lockByIdNoWait(${tableMo.idColumn.propType.type} id) {
+        return sqlSession.selectOne(NAMESPACE + ".lockByIdNoWait", id);
+    }
+
+    @Override
     public int update(${tableMo.daoMo.modelName} a${tableMo.daoMo.modelName}) {
         return sqlSession.update(NAMESPACE + ".update", a${tableMo.daoMo.modelName});
     }

@@ -61,7 +61,7 @@
         <include refid="allColumns" />
         from ${tableMo.tableName}
         where ${tableMo.idColumn.columnName} = ${r"#{"}${tableMo.idColumn.propName}${r"}"}
-        for update<#if tableMo.dbMo.supportNoWait> nowait</#if>
+        for update
     </select>
 
     <select id="lockByIdWait" resultMap="RM">
@@ -70,6 +70,14 @@
         from ${tableMo.tableName}
         where ${tableMo.idColumn.columnName} = ${r"#{"}${tableMo.idColumn.propName}${r"}"}
         for update
+    </select>
+
+    <select id="lockByIdNoWait" resultMap="RM">
+        select
+        <include refid="allColumns" />
+        from ${tableMo.tableName}
+        where ${tableMo.idColumn.columnName} = ${r"#{"}${tableMo.idColumn.propName}${r"}"}
+        for update nowait
     </select>
 
     <update id="update" parameterType="${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName}">
