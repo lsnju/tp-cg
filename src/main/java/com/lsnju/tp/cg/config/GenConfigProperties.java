@@ -1,6 +1,7 @@
 package com.lsnju.tp.cg.config;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 
 import com.lsnju.base.model.BaseMo;
 import com.lsnju.tp.cg.config.enums.DalOrgTypeEnum;
@@ -67,11 +68,11 @@ public class GenConfigProperties extends BaseMo {
     private boolean notNull;
 
     public void init() {
-        this.domainPrefix = StringUtils.remove(this.domainPrefix, ".");
-        this.domainSuffix = StringUtils.remove(this.domainSuffix, ".");
-        this.repoModelPrefix = StringUtils.remove(this.repoModelPrefix, ".");
-        this.repoModelSuffix = StringUtils.remove(this.repoModelSuffix, ".");
-        this.moduleName = StringUtils.remove(this.moduleName, ".");
+        this.domainPrefix = Strings.CS.remove(this.domainPrefix, ".");
+        this.domainSuffix = Strings.CS.remove(this.domainSuffix, ".");
+        this.repoModelPrefix = Strings.CS.remove(this.repoModelPrefix, ".");
+        this.repoModelSuffix = Strings.CS.remove(this.repoModelSuffix, ".");
+        this.moduleName = Strings.CS.remove(this.moduleName, ".");
         this.basePath = path(this.basePath, WORKING_DIR);
         this.daoBasePath = path(this.daoBasePath);
         this.repoBasePath = path(this.repoBasePath);
@@ -87,7 +88,7 @@ public class GenConfigProperties extends BaseMo {
 
     private String path(String path, String defaultPath) {
         if (StringUtils.isNotBlank(path)) {
-            return StringUtils.removeEnd(StringUtils.replace(path, "\\", "/"), "/");
+            return Strings.CS.removeEnd(Strings.CS.replace(path, "\\", "/"), "/");
         }
         return defaultPath;
     }

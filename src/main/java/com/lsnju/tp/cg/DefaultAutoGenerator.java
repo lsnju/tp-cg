@@ -19,6 +19,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 
 import com.lsnju.base.model.BaseMo;
 import com.lsnju.base.model.BaseRo;
@@ -428,31 +429,31 @@ public class DefaultAutoGenerator extends BaseMo implements AutoGenerator {
 
 
     protected String trimPackage(String packageName) {
-        return StringUtils.removeEnd(StringUtils.replace(packageName, "..", "."), ".");
+        return Strings.CS.removeEnd(Strings.CS.replace(packageName, "..", "."), ".");
     }
 
     protected String getRepoTestPath(String fullClassName) {
-        final String javaFilePath = StringUtils.replace(fullClassName, ".", "/");
+        final String javaFilePath = Strings.CS.replace(fullClassName, ".", "/");
         return String.format("%s%s/%s.java", trimPath(genConfig.repoBasePath()), trimPath(genConfig.getFunTestPath()), javaFilePath);
     }
 
     protected String getSavePath(String fullClassName) {
-        final String javaFilePath = StringUtils.replace(fullClassName, ".", "/");
+        final String javaFilePath = Strings.CS.replace(fullClassName, ".", "/");
         return String.format("%s%s/%s.java", trimPath(genConfig.getBasePath()), trimPath(genConfig.getJavaPath()), javaFilePath);
     }
 
     protected String getDaoSavePath(String fullClassName) {
-        final String javaFilePath = StringUtils.replace(fullClassName, ".", "/");
+        final String javaFilePath = Strings.CS.replace(fullClassName, ".", "/");
         return String.format("%s%s/%s.java", trimPath(genConfig.daoBasePath()), trimPath(genConfig.getJavaPath()), javaFilePath);
     }
 
     protected String getRepoSavePath(String fullClassName) {
-        final String javaFilePath = StringUtils.replace(fullClassName, ".", "/");
+        final String javaFilePath = Strings.CS.replace(fullClassName, ".", "/");
         return String.format("%s%s/%s.java", trimPath(genConfig.repoBasePath()), trimPath(genConfig.getJavaPath()), javaFilePath);
     }
 
     protected String getRestSavePath(String fullClassName) {
-        final String javaFilePath = StringUtils.replace(fullClassName, ".", "/");
+        final String javaFilePath = Strings.CS.replace(fullClassName, ".", "/");
         return String.format("%s%s/%s.java", trimPath(genConfig.restBasePath()), trimPath(genConfig.getJavaPath()), javaFilePath);
     }
 
@@ -479,7 +480,7 @@ public class DefaultAutoGenerator extends BaseMo implements AutoGenerator {
     }
 
     private String trimPath(String path) {
-        return StringUtils.removeEnd(path, "/");
+        return Strings.CS.removeEnd(path, "/");
     }
 
     private ColumnMo convert(BaseColumnDo item) {
@@ -504,10 +505,10 @@ public class DefaultAutoGenerator extends BaseMo implements AutoGenerator {
     private String getColumnName(String columnName) {
         String ret = columnName;
         for (String item : ignoreFieldPrefixSet) {
-            ret = StringUtils.removeStartIgnoreCase(ret, item);
+            ret = Strings.CI.removeStart(ret, item);
         }
         for (String item : ignoreFieldSuffixSet) {
-            ret = StringUtils.removeEndIgnoreCase(ret, item);
+            ret = Strings.CI.removeEnd(ret, item);
         }
         return ret;
     }
@@ -534,10 +535,10 @@ public class DefaultAutoGenerator extends BaseMo implements AutoGenerator {
     protected String getDomainName(final String tableName) {
         String name = tableName;
         for (String item : ignoreTablePrefixSet) {
-            name = StringUtils.removeStartIgnoreCase(name, item);
+            name = Strings.CI.removeStart(name, item);
         }
         for (String item : ignoreTablePrefixSet) {
-            name = StringUtils.removeEndIgnoreCase(name, item);
+            name = Strings.CI.removeEnd(name, item);
         }
         final StringBuilder sb = new StringBuilder();
         if (StringUtils.isNotBlank(genConfig.getDomainPrefix())) {

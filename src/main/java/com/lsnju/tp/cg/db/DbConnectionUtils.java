@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 
 /**
  *
@@ -61,7 +61,7 @@ public class DbConnectionUtils {
                 .nullable(column.getString("IS_NULLABLE"))
                 .defaultValue(column.getString("COLUMN_DEF"))
                 .maxLength(column.getInt("COLUMN_SIZE"))
-                .autoIncrement(StringUtils.equals("YES", column.getString("IS_AUTOINCREMENT")))
+                .autoIncrement(Strings.CI.equals("YES", column.getString("IS_AUTOINCREMENT")))
 //                .columnKey(column.getString(""))
 //                .precision(column.getInt(""))
 //                .scale(column.getInt(""))
