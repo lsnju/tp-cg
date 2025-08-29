@@ -127,7 +127,9 @@
     <!-- end pageQuery -->
 
     <delete id="delete">
+        <![CDATA[
         delete from ${tableMo.tableName} where ${tableMo.idColumn.columnName} = ${r"#{"}${tableMo.idColumn.propName}${r"}"}
+        ]]>
     </delete>
 
     <select id="getByCond" resultMap="RM" parameterType="java.util.HashMap">
