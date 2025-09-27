@@ -17,7 +17,6 @@ import com.lsnju.base.enums.BizErrorEnum;
 import com.lsnju.base.model.PageList;
 import com.lsnju.base.model.rs.BaseResp;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -28,12 +27,15 @@ import lombok.extern.slf4j.Slf4j;
  * @version V1.0
  */
 @Slf4j
-@Setter
 @RestController
 public class ${tableMo.restMo.implName} implements ${tableMo.restMo.apiName} {
 
-    @Autowired
     private ${tableMo.repoMo.apiName} repo;
+
+    @Autowired
+    public void setRepo(${tableMo.repoMo.apiName} repo) {
+        this.repo = repo;
+    }
 
     @Override
     public BaseResp<PageList<${tableMo.restMo.modelName}>> pageQuery(@Valid ${tableMo.restMo.pageReqName} request) {
