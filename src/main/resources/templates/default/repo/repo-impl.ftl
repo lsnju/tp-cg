@@ -21,7 +21,6 @@ import ${tableMo.repoMo.qryReqPackage}.${tableMo.repoMo.qryReqName};
 import com.lsnju.base.model.PageList;
 import com.lsnju.base.util.TpStringUtils;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -32,12 +31,15 @@ import lombok.extern.slf4j.Slf4j;
  * @version V1.0
  */
 @Slf4j
-@Setter
 @Repository
 public class ${tableMo.repoMo.implName} implements ${tableMo.repoMo.apiName} {
 
-    @Autowired
     private ${tableMo.daoMo.apiName} dao;
+
+    @Autowired
+    public void setDao(${tableMo.daoMo.apiName} dao) {
+        this.dao = dao;
+    }
 
     @Override
     public ${tableMo.idColumn.propType.type} add(${tableMo.repoMo.modelName} item) {

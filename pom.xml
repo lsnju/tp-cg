@@ -6,14 +6,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>3.5.5</version>
+        <version>3.5.6</version>
         <relativePath />
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lsnju</groupId>
     <artifactId>tp-cg</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <packaging>jar</packaging>
     <name>tp-cg</name>
@@ -59,7 +59,7 @@
             <dependency>
                 <groupId>com.lsnju.tp3</groupId>
                 <artifactId>tp-bom</artifactId>
-                <version>3.1.17</version>
+                <version>3.1.20</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.18.0</version>
+            <version>3.19.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
@@ -98,7 +98,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>33.4.8-jre</version>
+            <version>33.5.0-jre</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -266,7 +266,7 @@
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.8.0</version>
+                <version>0.9.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>ossrh</publishingServerId>

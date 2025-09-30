@@ -20,7 +20,6 @@ import ${tableMo.daoMo.qryReqPackage}.${tableMo.daoMo.qryReqName};
 import ${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName};
 import com.lsnju.base.model.PageList;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -31,18 +30,21 @@ import lombok.extern.slf4j.Slf4j;
  * @version V1.0
  */
 @Slf4j
-@Setter
 @Repository
 public class ${tableMo.daoMo.implName} implements ${tableMo.daoMo.apiName} {
 
     /** NAMESPACE */
     private static final String NAMESPACE = ${tableMo.daoMo.apiName}.class.getName();
 
+    private SqlSession sqlSession;
+
     @Autowired
     <#if tableMo.daoMo.sqlSessionName??>
     @Qualifier("${tableMo.daoMo.sqlSessionName}")
     </#if>
-    private SqlSession sqlSession;
+    public void setSqlSession(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
+    }
 
     @Override
     public ${tableMo.idColumn.propType.type} add(${tableMo.daoMo.modelName} a${tableMo.daoMo.modelName}) {
