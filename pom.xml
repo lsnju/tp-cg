@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>3.5.6</version>
+        <version>3.5.7</version>
         <relativePath />
     </parent>
 
@@ -59,7 +59,7 @@
             <dependency>
                 <groupId>com.lsnju.tp3</groupId>
                 <artifactId>tp-bom</artifactId>
-                <version>3.1.21</version>
+                <version>3.1.24</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
