@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 
 import ${tableMo.daoMo.apiPackage}.${tableMo.daoMo.apiName};
+import ${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName};
 import ${tableMo.daoMo.pageReqPackage}.${tableMo.daoMo.pageReqName};
 import ${tableMo.daoMo.qryReqPackage}.${tableMo.daoMo.qryReqName};
-import ${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName};
 import ${tableMo.repoMo.apiPackage}.${tableMo.repoMo.apiName};
 import ${tableMo.repoMo.modelPackage}.${tableMo.repoMo.modelName};
 import ${tableMo.repoMo.pageReqPackage}.${tableMo.repoMo.pageReqName};
