@@ -27,6 +27,9 @@ public class GenConfigProperties extends BaseMo {
     public static final String FUN_TEST_PATH = "/src/fun-test/java";
     public static final String WORKING_DIR = GenUtils.getWorkingDir();
 
+    private boolean genDaoDo = false;
+    private boolean genDaoMapper = false;
+    private boolean genDao = true;
     private boolean genRepo = true;
     private boolean genRest = true;
 

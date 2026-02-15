@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import ${tableMo.repoMo.modelPackage}.${tableMo.repoMo.modelName};
 import com.lsnju.base.model.BaseMo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +24,7 @@ public class ${tableMo.restMo.modelName} extends BaseMo {
 <#list tableMo.columnList as col>
 <#if col.propType == 'DATE' >
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @Schema(description = "datetime", type = "string", example = "2026-01-01 00:00:00")
 </#if>
     private ${col.propType.type} ${col.propName}; // ${col.columnComment!}
 </#list>
