@@ -315,12 +315,21 @@ public class DefaultAutoGenerator extends BaseMo implements AutoGenerator {
         daoMo.setSqlSessionName(this.genConfig.getSqlSessionName());
 
         final List<GenFileMo> list = new ArrayList<>();
-        list.add(new GenFileMo(daoMo.getModelPath(), "default/dao/dao-model.ftl"));
-        list.add(new GenFileMo(daoMo.getApiPath(), "default/dao/dao-api.ftl"));
-        list.add(new GenFileMo(daoMo.getImplPath(), "default/dao/dao-impl.ftl"));
-        list.add(new GenFileMo(daoMo.getPageReqPath(), "default/dao/dao-req-page.ftl"));
-        list.add(new GenFileMo(daoMo.getQryReqPath(), "default/dao/dao-req-query.ftl"));
-        list.add(new GenFileMo(daoMo.getMapperPath(), String.format("default/mapper/%s.ftl", getDatabaseProductName())));
+        if(genConfig.isGenDao()) {
+            list.add(new GenFileMo(daoMo.getModelPath(), "default/dao/dao-model.ftl"));
+            list.add(new GenFileMo(daoMo.getApiPath(), "default/dao/dao-api.ftl"));
+            list.add(new GenFileMo(daoMo.getImplPath(), "default/dao/dao-impl.ftl"));
+            list.add(new GenFileMo(daoMo.getPageReqPath(), "default/dao/dao-req-page.ftl"));
+            list.add(new GenFileMo(daoMo.getQryReqPath(), "default/dao/dao-req-query.ftl"));
+            list.add(new GenFileMo(daoMo.getMapperPath(), String.format("default/mapper/%s.ftl", getDatabaseProductName())));
+        } else {
+            if (genConfig.isGenDaoDo()) {
+                list.add(new GenFileMo(daoMo.getModelPath(), "default/dao/dao-model.ftl"));
+            }
+            if (genConfig.isGenDaoMapper()) {
+                list.add(new GenFileMo(daoMo.getMapperPath(), String.format("default/mapper/%s.ftl", getDatabaseProductName())));
+            }
+        }
         daoMo.setGenFileList(list);
         return daoMo;
     }

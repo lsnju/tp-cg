@@ -15,9 +15,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
 import ${tableMo.daoMo.apiPackage}.${tableMo.daoMo.apiName};
+import ${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName};
 import ${tableMo.daoMo.pageReqPackage}.${tableMo.daoMo.pageReqName};
 import ${tableMo.daoMo.qryReqPackage}.${tableMo.daoMo.qryReqName};
-import ${tableMo.daoMo.modelPackage}.${tableMo.daoMo.modelName};
 import com.lsnju.base.model.PageList;
 
 import lombok.extern.slf4j.Slf4j;
