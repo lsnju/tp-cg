@@ -50,7 +50,7 @@ public class ${tableMo.daoMo.implName} implements ${tableMo.daoMo.apiName} {
     public ${tableMo.idColumn.propType.type} add(${tableMo.daoMo.modelName} a${tableMo.daoMo.modelName}) {
         int size = sqlSession.insert(NAMESPACE + ".add", a${tableMo.daoMo.modelName});
         log.debug("insert size = {}", size);
-        Assert.isTrue(size == 1, "insert a${tableMo.daoMo.modelName} error");
+        Assert.isTrue(size == 1, "insert_a${tableMo.daoMo.modelName}_error");
         return a${tableMo.daoMo.modelName}.${tableMo.idColumn.propGetMethod}();
     }
 
