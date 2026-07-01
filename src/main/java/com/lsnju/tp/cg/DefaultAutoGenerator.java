@@ -126,6 +126,7 @@ public class DefaultAutoGenerator extends BaseMo implements AutoGenerator {
         TemplateHashModel staticModels = wrapper.getStaticModels();
         try {
             this.cfg.setSharedVariable("String", staticModels.get("java.lang.String"));
+            this.cfg.setSharedVariable("StringUtils", staticModels.get("org.apache.commons.lang3.StringUtils"));
         } catch (TemplateModelException e) {
             log.error(String.format("%s", e.getMessage()), e);
         }

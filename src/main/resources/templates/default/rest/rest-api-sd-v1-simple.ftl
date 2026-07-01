@@ -44,7 +44,7 @@ public interface ${tableMo.restMo.apiName} {
     @Operation(summary = "查询")
     @GetMapping("/{id}")
     BaseResp<${tableMo.restMo.modelName}> query(@Parameter(description = "ID", required = true, example = "111")
-                                              @PathVariable(name = "id") ${tableMo.idColumn.propType.type} id);
+                     ${StringUtils.repeat(' ', StringUtils.length(tableMo.restMo.modelName))}@PathVariable(name = "id") ${tableMo.idColumn.propType.type} id);
 
     @Operation(summary = "更新")
     @PutMapping("/{id}")
