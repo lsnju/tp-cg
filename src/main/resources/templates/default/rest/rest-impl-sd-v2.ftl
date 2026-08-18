@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RestController;
 
 import ${tableMo.repoMo.apiPackage}.${tableMo.repoMo.apiName};
@@ -88,6 +89,9 @@ public class ${tableMo.restMo.implName} implements ${tableMo.restMo.apiName} {
         if (item == null) {
             return RespEntityUtils.success(null, HttpStatus.OK);
         }
+        boolean delete = repo.delete(id);
+        Assert.isTrue(delete, "delete error");
         return RespEntityUtils.success(null, HttpStatus.OK);
     }
+
 }
