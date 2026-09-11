@@ -68,6 +68,7 @@ public class GenConfigProperties extends BaseMo {
     private RestReturnTypeEnum restReturnType = RestReturnTypeEnum.FULL;
     private DalOrgTypeEnum dalOrg = DalOrgTypeEnum.UNION;
 
+    // 数据库字段非空，Converter增加非空处理
     private boolean notNull;
 
     public void init() {

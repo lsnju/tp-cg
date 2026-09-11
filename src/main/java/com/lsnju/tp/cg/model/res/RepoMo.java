@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringExclude;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lsnju.base.model.BaseMo;
 
 import lombok.Getter;
@@ -43,6 +44,7 @@ public class RepoMo extends BaseMo {
     private String testPackage;
     private String testPath;
 
+    @JsonIgnore
     @ToStringExclude
     private List<GenFileMo> genFileList;
 
