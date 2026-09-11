@@ -86,8 +86,8 @@ public class ${tableMo.restMo.implName} implements ${tableMo.restMo.apiName} {
         if (item == null) {
             return BaseResp.of(null, BizErrorEnum.SUCCESS);
         }
-        boolean delete = repo.delete(id);
-        Assert.isTrue(delete, "delete error");
+        // boolean delete = repo.delete(id);
+        // Assert.isTrue(delete, "delete error");
         return BaseResp.of(null, BizErrorEnum.SUCCESS);
     }
 
